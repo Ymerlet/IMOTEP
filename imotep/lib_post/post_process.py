@@ -2,18 +2,21 @@ import sys
 
 sys.path.insert(1, r'../lib_imotep')
 import pickle as pkl
+import pathlib
 
 from plot_2D import *
 from visu_3D import visualize_fields
 
 # ----------------------------------------------------------------------------------------------------------------------
 # load results
-scene_folderpath_root = '../output/'
+scene_folderpath_root = Path('./')
+scene_folderpath_root = scene_folderpath_root.parent.parent
+scene_folderpath_root = scene_folderpath_root / 'output/'
 
 scene_foldername_list = ['demo_shelter_building_tree'] # demo_tree, demo_shelter_building, demo_shelter_building_tree
 scene_list = []
 for scene_foldername in scene_foldername_list:
-    with open(scene_folderpath_root + scene_foldername + '/imotep.pkl', 'rb') as data:
+    with open(scene_folderpath_root / scene_foldername / 'imotep.pkl', 'rb') as data:
         scene_list.append(pkl.load(data))
 
 # nighttime
@@ -42,7 +45,7 @@ plot_comparative(scene_list=scene_list,
                  sunrise_time_tuple=sunrise_time_tuple,
                  sunset_time_tuple=sunset_time_tuple,
                  save=save,
-                 save_folderpath=scene_folderpath_root+save_foldername)
+                 save_folderpath=scene_folderpath_root / save_foldername)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # comparative plot of surface-averaged variables
@@ -59,7 +62,7 @@ plot_comparative(scene_list=scene_list,
                  sunrise_time_tuple=sunrise_time_tuple,
                  sunset_time_tuple=sunset_time_tuple,
                  save=save,
-                 save_folderpath=scene_folderpath_root+save_foldername)
+                 save_folderpath=scene_folderpath_root / save_foldername)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # comparative plot of probe variables
@@ -75,7 +78,7 @@ plot_comparative(scene_list=scene_list,
                  sunrise_time_tuple=sunrise_time_tuple,
                  sunset_time_tuple=sunset_time_tuple,
                  save=save,
-                 save_folderpath=scene_folderpath_root+save_foldername)
+                 save_folderpath=scene_folderpath_root / save_foldername)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # plot weather variables
@@ -86,7 +89,7 @@ plot_weather(scene=scene_list[0],
              sunrise_time_tuple=sunrise_time_tuple,
              sunset_time_tuple=sunset_time_tuple,
              save=save,
-             save_folderpath=scene_folderpath_root+save_foldername)
+             save_folderpath=scene_folderpath_root / save_foldername)
 
 # ----------------------------------------------------------------------------------------------------------------------
 # plot calculation statistics
@@ -96,7 +99,7 @@ plot_statistics(scene_list=scene_list,
                 figsize=(9, 6),
                 fontsize=18,
                 save=save,
-                save_folderpath=scene_folderpath_root+save_foldername)
+                save_folderpath=scene_folderpath_root / save_foldername)
 
 # # ----------------------------------------------------------------------------------------------------------------------
 # 3D visualization of the field results on surfaces and/or at probes
