@@ -24,7 +24,7 @@ general_dict = {
     'system_orientation'    : 0,                   # [° from north, rotation of the system: clockwise] info: North direction = +Y. At 0° the system orientation is West(-X)/East(+X)
     'temperature_init'      : 25.,                  # [°C]
     'output_period'         : 'target_date',        # target_date or full_period
-    'regpet_filepath'       : r'lib_pet/regpet.pkl',
+    'regpet_filepath'       : r'./imotep/lib_pet/regpet.pkl',
     'from_save'             : False,
     'from_save_domain_type' : None,  # 'viewfactors', 'solar_prefactors', 'all', None
     'from_save_probes_type' : None,  # 'viewfactors', 'solar_prefactors', 'all', None
