@@ -1,7 +1,17 @@
 [project]
-name = "imotep"
+name = "IMOTEP"
 version = "0.1.0"
+
+authors = [
+    {name = "Teddy Gresse", email = "teddy.gresse@insa-lyon.fr"},
+    {name = "Damien David", email = "damien.david@insa-lyon.fr"},
+]
+
 description = "Add your description here"
+
+
+# keywords = ["key1", "key2", "key3"]
+
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
