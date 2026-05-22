@@ -33,7 +33,7 @@
 # The fact that you are presently reading this means that you have had
 # knowledge of the CeCILL license and that you accept its terms.
 
-import lib_pre.geometry.geogen as gg
+import imotep.lib_pre.geometry.geogen as gg
 import numpy as np
 import pyvista as pv
 

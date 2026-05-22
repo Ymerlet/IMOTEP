@@ -1,5 +1,5 @@
-import lib_pre.geometry.geomorph as gm
-import lib_pre.geometry.geogen as gg
+import imotep.lib_pre.geometry.geomorph as gm
+import imotep.lib_pre.geometry.geogen as gg
 
 
 def geocase_tree(tr, th):

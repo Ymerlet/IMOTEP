@@ -1,6 +1,6 @@
 
 
-import lib_pre.wind.wind_factors as wind_factors
+import imotep.lib_pre.wind.wind_factors as wind_factors
 import input.geocase as geocase
 
 # load the geocase dictionary
