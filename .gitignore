@@ -1,3 +1,7 @@
 # output folder
 output
 .idea
+
+# files
+*.pyc
+uv.lock

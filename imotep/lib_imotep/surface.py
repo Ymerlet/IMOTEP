@@ -34,7 +34,7 @@
 # knowledge of the CeCILL license and that you accept its terms.
 
 import numpy as np
-from lib_imotep.facet import FacetProperties, Facet
+from imotep.lib_imotep.facet import FacetProperties, Facet
 import pyvista as pv
 
 class Surface:

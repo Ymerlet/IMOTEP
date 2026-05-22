@@ -38,7 +38,7 @@ import numpy as np
 import quadpy
 import trimesh
 
-from lib_imotep.utils import global_timer
+from imotep.lib_imotep.utils import global_timer
 
 class RadiativeSystemGeometry:
 

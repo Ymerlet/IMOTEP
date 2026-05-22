@@ -66,7 +66,7 @@ def generate_airzone_list(airzone_def_dict_list):
             raise ValueError(f"'{airzone_type}' value for parameter 'type' in airzone_dict is not a valid. Expected value: {valid_airzone_type_list}")
 
     # store the airzone lists in a dictionary
-    # weather: air temperature and wind speed directly extracted from weather
+    # weather: air temperature and wind speed directly extracted from imotep.lib_imotep.weather
     # balanced: air temperature computed with a heat balance
     # dynamic: the air temperature changes at every timestep
     # all: all airzones
@@ -129,7 +129,7 @@ class WeatherAirZone(AirZone):
         self.weather = weather
 
     def initialize_timestep(self):
-        # set temperature, wind speed ad relative humidity from weather data
+        # set temperature, wind speed ad relative humidity from imotep.lib_imotep.weather data
         # this function is called once weather temperature was updated
         self.temperature = self.weather.air_temperature
         wind_factor = self.wind_factor_wdl.get_value_for_closest_wind_direction(self.weather.wind_direction)

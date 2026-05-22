@@ -39,15 +39,15 @@ import pandas as pd
 import pickle as pkl
 from scipy.interpolate import RegularGridInterpolator
 
-from lib_imotep.utils import global_timer
-from lib_imotep.weather import Weather
-from lib_imotep.airzone import generate_airzone_list, AirZone, FixedAirZone
-from lib_imotep.panel import generate_panel_list
-from lib_imotep.surface import Surface
-from lib_imotep.facet import Facet
-from lib_imotep.probe import generate_probe_set_list, Probe
-from lib_imotep.radiative_sys_geom import RadiativeSystemGeometry
-from lib_imotep.radiative_model import RadiativeModel
+from imotep.lib_imotep.utils import global_timer
+from imotep.lib_imotep.weather import Weather
+from imotep.lib_imotep.airzone import generate_airzone_list, AirZone, FixedAirZone
+from imotep.lib_imotep.panel import generate_panel_list
+from imotep.lib_imotep.surface import Surface
+from imotep.lib_imotep.facet import Facet
+from imotep.lib_imotep.probe import generate_probe_set_list, Probe
+from imotep.lib_imotep.radiative_sys_geom import RadiativeSystemGeometry
+from imotep.lib_imotep.radiative_model import RadiativeModel
 
 class IMOTEP:
     """
@@ -144,7 +144,7 @@ class IMOTEP:
                 # compute the net rad lw fluxes on facets
                 self.radiative_model.compute_lw_flux()
 
-                # send fluxes from facets to cores
+                # send fluxes from imotep.lib_imotep.facets to cores
                 self._solve_external_fluxes_facet_to_core()
 
                 # compute air temperature
@@ -650,7 +650,7 @@ class IMOTEP:
 
     def _solve_initialize_timestep(self):
         """
-            Update the temperature of facets from weather data for each surface without cores
+            Update the temperature of facets from imotep.lib_imotep.weather data for each surface without cores
             Update the temperature array of the previous timestep for each surface with cores
             """
         # update hc and prev_ta on dynamic airzones and compute the modified wind speed on balanced airzones (under shelter)
@@ -721,7 +721,7 @@ class IMOTEP:
 
 if __name__ == '__main__':
 
-    from input.demo_shelter_building_tree import general_dict, weather_def_dict, panel_def_dict_list, airzone_def_dict_list, probe_set_def_list, output_def_dict
+    from imotep.input.demo_shelter_building_tree import general_dict, weather_def_dict, panel_def_dict_list, airzone_def_dict_list, probe_set_def_list, output_def_dict
 
     # create the state object
     imotep = IMOTEP(general_dict,

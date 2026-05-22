@@ -36,8 +36,8 @@
 import sys
 import datetime
 
-from lib_imotep.utils import global_timer, SaveFolderManager, StreamManager
-from lib_imotep.imotep import IMOTEP
+from imotep.lib_imotep.utils import global_timer, SaveFolderManager, StreamManager
+from imotep.lib_imotep.imotep import IMOTEP
 
 def main(general_dict,
          weather_def_dict,
@@ -108,7 +108,7 @@ if __name__ == '__main__':
     ## load the inputs
     # from input.demo_shelter_building import global_input_list
     # from input.demo_tree import global_input_list
-    from input.demo_shelter_building_tree import global_input_list
+    from imotep.input.demo_shelter_building_tree import global_input_list
 
 
     case_name_list = []

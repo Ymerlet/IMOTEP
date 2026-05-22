@@ -3,8 +3,8 @@ import sys
 sys.path.insert(1, r'../lib_imotep')
 import pickle as pkl
 
-from lib_post.plot_2D import *
-from lib_post.visu_3D import visualize_fields
+from plot_2D import *
+from visu_3D import visualize_fields
 
 # ----------------------------------------------------------------------------------------------------------------------
 # load results

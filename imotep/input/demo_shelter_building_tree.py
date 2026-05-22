@@ -1,7 +1,7 @@
 import math
 
 import imotep.lib_pre.wind.wind_factors as wind_factors
-import input.geocase as geocase
+import imotep.input.geocase as geocase
 
 # load the geocase dictionary
 sl = 12; sw = 12; sh = 4 # shelter length, width, height
